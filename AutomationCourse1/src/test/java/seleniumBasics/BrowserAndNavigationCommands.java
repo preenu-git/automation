@@ -12,6 +12,7 @@ public class BrowserAndNavigationCommands extends Base{
 	System.out.println(url);
 	String handleId=driver.getWindowHandle();
 	System.out.println(handleId);
+	
 	}
 	public void navigationCommand()
 	{
