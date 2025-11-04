@@ -7,17 +7,22 @@ import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
 import automationCore.TestNGBase;
+import pages.LoginPage;
 
 public class LoginTest extends TestNGBase {
 	@Test
 	public void verifyUserLoginWithValidCredentials()
 	{
-		WebElement userNameField=driver.findElement(By.id("user-name"));
-		userNameField.sendKeys("standard_user");
-		WebElement passwordField=driver.findElement(By.id("password"));
-		passwordField.sendKeys("secret_sauce");
-		WebElement loginField=driver.findElement(By.id("login-button"));
-		loginField.click();
+		//WebElement userNameField=driver.findElement(By.id("user-name"));
+		//userNameField.sendKeys("standard_user");
+		//WebElement passwordField=driver.findElement(By.id("password"));
+		//passwordField.sendKeys("secret_sauce");
+		//WebElement loginField=driver.findElement(By.id("login-button"));
+		//loginField.click();
+		LoginPage loginPage=new LoginPage(driver);
+		loginPage.enterUsernameOnUsernameField();
+		loginPage.enterPasswordOnPasswordField();
+		loginPage.clickOnClickButton();
 	}
 	@Test
 	public void verifyUserLoginWithInvalidUserNameValidPassword() 
